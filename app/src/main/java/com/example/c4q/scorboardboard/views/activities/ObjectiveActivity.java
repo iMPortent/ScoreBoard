@@ -21,30 +21,24 @@ import java.util.List;
  * Created by c4q on 3/3/18.
  */
 
-public class ListActivity extends AppCompatActivity implements DataToActivity {
-
-    private RecyclerView objectiveList;
-    private List<Objective> objectives;
-    private ObjectiveAdapter adapter;
-
+public class ObjectiveActivity extends AppCompatActivity implements DataToActivity {
 
     //TODO local storage
-
+    //TODO save forms in all orientations
     /**
      * decide whether youd like to use a database, or ashared pref
      */
 
+    public static List<Objective> objectives;
+    public static ObjectiveAdapter adapter;
+
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.list_activity);
-
+        setContentView(R.layout.list_fragment);
         objectives = new ArrayList<>();
         adapter = new ObjectiveAdapter(objectives);
-        objectiveList = findViewById(R.id.recycler_pbjectives);
-
-        objectiveList.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        objectiveList.setAdapter(adapter);
 
     }
 
