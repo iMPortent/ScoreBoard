@@ -2,4 +2,8 @@
 <resources>
     <dimen name="titles">25sp</dimen>
     <dimen name="scores">15sp</dimen>
+    <dimen name="cardview_obj">25sp</dimen>
+    <dimen name="cardview_player">15sp</dimen>
+    <dimen name="cardview_vs">20sp</dimen>
+
 </resources>

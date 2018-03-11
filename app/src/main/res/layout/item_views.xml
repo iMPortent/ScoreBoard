@@ -2,35 +2,58 @@
 <android.support.v7.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:layout_margin="15dp">
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_margin="15dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Objective"
-            android:textSize="@dimen/titles"
+            android:text="@string/objective"
+            android:textSize="@dimen/cardview_obj"
             android:id="@+id/text_objective"
+            android:textAlignment="center"
             />
 
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:text="playertwo"
+            android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/cardview_player"
+            android:text="@string/null_player"
+            android:padding="10sp"
             android:id="@+id/text_player_one"/>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:text="playerone"
+            android:textSize="@dimen/cardview_vs"
+            android:text="@string/vs"
+            android:textAlignment="center"
+            android:id="@+id/text_vs"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/cardview_player"
+            android:textAlignment="viewEnd"
+            android:text="@string/null_player"
+            android:padding="10sp"
             android:id="@+id/text_player_two"/>
 
+        </LinearLayout>
 
 
 

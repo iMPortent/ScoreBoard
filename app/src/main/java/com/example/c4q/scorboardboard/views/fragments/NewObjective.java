@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import com.example.c4q.scorboardboard.Objective;
 import com.example.c4q.scorboardboard.R;
-import com.example.c4q.scorboardboard.views.activities.DataToActivity;
+import com.example.c4q.scorboardboard.DataToActivity;
 
 /**
  * Created by c4q on 3/7/18.

@@ -1,4 +1,4 @@
-package com.example.c4q.scorboardboard.views.activities;
+package com.example.c4q.scorboardboard;
 
 import com.example.c4q.scorboardboard.Objective;
 

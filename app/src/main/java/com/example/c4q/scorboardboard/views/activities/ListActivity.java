@@ -8,6 +8,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+
+import com.example.c4q.scorboardboard.DataToActivity;
 import com.example.c4q.scorboardboard.Objective;
 import com.example.c4q.scorboardboard.R;
 import com.example.c4q.scorboardboard.controller.ObjectiveAdapter;
@@ -25,6 +27,12 @@ public class ListActivity extends AppCompatActivity implements DataToActivity {
     private List<Objective> objectives;
     private ObjectiveAdapter adapter;
 
+
+    //TODO local storage
+
+    /**
+     * decide whether youd like to use a database, or ashared pref
+     */
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
