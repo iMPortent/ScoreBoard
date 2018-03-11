@@ -6,6 +6,6 @@ import com.example.c4q.scorboardboard.Objective;
  * Created by c4q on 3/10/18.
  */
 
-public interface DataToActivity {
+public interface MyObjectiveListener {
     void grabData(Objective objective);
 }

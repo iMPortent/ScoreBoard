@@ -9,12 +9,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.c4q.scorboardboard.MyObjectiveListener;
 import com.example.c4q.scorboardboard.Objective;
 import com.example.c4q.scorboardboard.R;
 import com.example.c4q.scorboardboard.controller.ObjectiveAdapter;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static com.example.c4q.scorboardboard.views.activities.ObjectiveActivity.objectives;
 import static com.example.c4q.scorboardboard.views.activities.ObjectiveActivity.adapter;
@@ -42,4 +40,5 @@ public class ObjectiveList extends Fragment {
 
         return view;
     }
+
 }

@@ -3,17 +3,17 @@ package com.example.c4q.scorboardboard.views.activities;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-import com.example.c4q.scorboardboard.DataToActivity;
+import com.example.c4q.scorboardboard.MyObjectiveListener;
 import com.example.c4q.scorboardboard.Objective;
 import com.example.c4q.scorboardboard.R;
 import com.example.c4q.scorboardboard.controller.ObjectiveAdapter;
 import com.example.c4q.scorboardboard.views.fragments.NewObjective;
+import com.example.c4q.scorboardboard.views.fragments.ObjectiveList;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +21,7 @@ import java.util.List;
  * Created by c4q on 3/3/18.
  */
 
-public class ObjectiveActivity extends AppCompatActivity implements DataToActivity {
+public class ObjectiveActivity extends AppCompatActivity implements MyObjectiveListener {
 
     //TODO local storage
     //TODO save forms in all orientations
@@ -36,9 +36,11 @@ public class ObjectiveActivity extends AppCompatActivity implements DataToActivi
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.list_fragment);
+        setContentView(R.layout.objective_activity);
         objectives = new ArrayList<>();
         adapter = new ObjectiveAdapter(objectives);
+
+        getFragmentManager().beginTransaction().replace(R.id.frame_holder, new ObjectiveList());
 
     }
 
@@ -53,7 +55,7 @@ public class ObjectiveActivity extends AppCompatActivity implements DataToActivi
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId() == R.id.option_new){
-          getFragmentManager().beginTransaction().replace(R.id.frame_holder, new NewObjective()).commit();
+          getFragmentManager().beginTransaction().replace(R.id.objective_fragment_holder, new NewObjective()).commit();
         }
         return super.onOptionsItemSelected(item);
     }

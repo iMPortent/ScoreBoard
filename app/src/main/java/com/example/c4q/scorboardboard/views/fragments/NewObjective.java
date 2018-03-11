@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import com.example.c4q.scorboardboard.Objective;
 import com.example.c4q.scorboardboard.R;
-import com.example.c4q.scorboardboard.DataToActivity;
+import com.example.c4q.scorboardboard.MyObjectiveListener;
 
 /**
  * Created by c4q on 3/7/18.
@@ -22,7 +22,7 @@ public class NewObjective extends Fragment {
     private EditText fieldPlayerOne, fieldPlayerTwo, fieldGoal, fieldObjective;
     private Button buttonSubmit;
     private Context context;
-    private DataToActivity passData;
+    private MyObjectiveListener passData;
 
     @Nullable
     @Override
@@ -47,7 +47,7 @@ public class NewObjective extends Fragment {
                         .setLimit(Integer.parseInt(fieldGoal.getText().toString()));
 
                 passData.grabData(objective);
-                getFragmentManager().beginTransaction().remove(NewObjective.this).commit();
+                getFragmentManager().beginTransaction().replace(R.id.objective_fragment_holder, new ObjectiveList()).commit();
             }
         });
         return view;
@@ -57,6 +57,6 @@ public class NewObjective extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        passData = (DataToActivity) context;
+        passData = (MyObjectiveListener) context;
     }
 }
