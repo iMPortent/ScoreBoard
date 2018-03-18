@@ -9,19 +9,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import com.example.c4q.scorboardboard.Objective;
+import com.example.c4q.scorboardboard.model.Objective;
 import com.example.c4q.scorboardboard.R;
-import com.example.c4q.scorboardboard.MyObjectiveListener;
+import com.example.c4q.scorboardboard.controller.MyObjectiveListener;
 
 /**
  * Created by c4q on 3/7/18.
  */
 
-public class NewObjective extends Fragment {
+public class FormFragment extends Fragment {
 
     private EditText fieldPlayerOne, fieldPlayerTwo, fieldGoal, fieldObjective;
     private Button buttonSubmit;
-    private Context context;
     private MyObjectiveListener passData;
 
     @Nullable
@@ -30,7 +29,6 @@ public class NewObjective extends Fragment {
 
         View view = inflater.inflate(R.layout.new_objective, container , false);
 
-        context = getContext();
         fieldObjective = view.findViewById(R.id.field_objective);
         fieldGoal = view.findViewById(R.id.field_goal);
         fieldPlayerOne = view.findViewById(R.id.field_first_player);
@@ -40,14 +38,14 @@ public class NewObjective extends Fragment {
         buttonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Objective objective = new Objective();
-                objective.setObjective(fieldObjective.getText().toString())
-                        .setPlayerOne(fieldPlayerOne.getText().toString())
-                        .setPlayerTwo(fieldPlayerTwo.getText().toString())
-                        .setLimit(Integer.parseInt(fieldGoal.getText().toString()));
+                Objective objective = new Objective(
+                        fieldObjective.getText().toString(),
+                        fieldPlayerOne.getText().toString(),
+                        fieldPlayerTwo.getText().toString(),
+                        Integer.parseInt(fieldGoal.getText().toString()));
 
                 passData.grabData(objective);
-                getFragmentManager().beginTransaction().replace(R.id.objective_fragment_holder, new ObjectiveList()).commit();
+                getFragmentManager().beginTransaction().replace(R.id.objective_fragment_holder, new ListFragment()).commit();
             }
         });
         return view;

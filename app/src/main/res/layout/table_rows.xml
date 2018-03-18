@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+         <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:text="@string/null_player"
+             android:textSize="@dimen/cardview_player"
+             android:padding="3dip"
+             android:textStyle="bold"
+             android:id="@+id/record_player"
+                 />
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Points"
+            android:textSize="@dimen/cardview_player"
+            android:padding="3dip"
+            android:textStyle="bold"
+            android:id="@+id/record_points"/>
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Time Stamp"
+            android:textSize="@dimen/cardview_player"
+            android:textStyle="bold"
+            android:id="@+id/record_time_stamp"
+            android:padding="3dip"/>
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Description"
+            android:textSize="@dimen/cardview_player"
+            android:textStyle="bold"
+            android:padding="3dip"
+            android:id="@+id/record_description"/>
+
+</TableRow>

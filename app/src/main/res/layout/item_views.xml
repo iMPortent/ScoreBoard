@@ -27,32 +27,97 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-        <TextView
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/cardview_player"
+                android:text="@string/null_player"
+                android:padding="10sp"
+                android:id="@+id/text_player_one"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/cardview_vs"
+                android:text="@string/vs"
+                android:textAlignment="center"
+                android:id="@+id/text_vs"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/cardview_player"
+                android:textAlignment="viewEnd"
+                android:text="@string/null_player"
+                android:padding="10sp"
+                android:id="@+id/text_player_two"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/cardview_player"
+                android:text="score"
+                android:paddingRight="30sp"
+                android:id="@+id/text_player_one_score"/>
+
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/cardview_player"
+                android:textAlignment="viewEnd"
+                android:text="score"
+                android:paddingLeft="30sp"
+                android:id="@+id/text_player_two_score"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/cardview_player"
-            android:text="@string/null_player"
-            android:padding="10sp"
-            android:id="@+id/text_player_one"/>
+            android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/cardview_vs"
-            android:text="@string/vs"
-            android:textAlignment="center"
-            android:id="@+id/text_vs"/>
+            <!--TODO style buttons, clear-->
 
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="4"
+                android:text="+"
+                android:id="@+id/add_player_one"
+                />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/cardview_player"
-            android:textAlignment="viewEnd"
-            android:text="@string/null_player"
-            android:padding="10sp"
-            android:id="@+id/text_player_two"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="4"
+                android:text="-"
+                android:id="@+id/subtract_player_one"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="4"
+                android:text="+"
+                android:id="@+id/add_player_two"/>
 
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="4"
+                android:text="-"
+                android:id="@+id/subtract_player_two"/>
         </LinearLayout>
 
 

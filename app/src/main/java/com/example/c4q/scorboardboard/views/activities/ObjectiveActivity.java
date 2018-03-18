@@ -7,12 +7,12 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-import com.example.c4q.scorboardboard.MyObjectiveListener;
-import com.example.c4q.scorboardboard.Objective;
+import com.example.c4q.scorboardboard.controller.MyObjectiveListener;
+import com.example.c4q.scorboardboard.model.Objective;
 import com.example.c4q.scorboardboard.R;
 import com.example.c4q.scorboardboard.controller.ObjectiveAdapter;
-import com.example.c4q.scorboardboard.views.fragments.NewObjective;
-import com.example.c4q.scorboardboard.views.fragments.ObjectiveList;
+import com.example.c4q.scorboardboard.views.fragments.FormFragment;
+import com.example.c4q.scorboardboard.views.fragments.ListFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,7 +40,7 @@ public class ObjectiveActivity extends AppCompatActivity implements MyObjectiveL
         objectives = new ArrayList<>();
         adapter = new ObjectiveAdapter(objectives);
 
-        getFragmentManager().beginTransaction().replace(R.id.frame_holder, new ObjectiveList());
+        getFragmentManager().beginTransaction().replace(R.id.frame_holder, new ListFragment());
 
     }
 
@@ -55,7 +55,7 @@ public class ObjectiveActivity extends AppCompatActivity implements MyObjectiveL
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId() == R.id.option_new){
-          getFragmentManager().beginTransaction().replace(R.id.objective_fragment_holder, new NewObjective()).commit();
+          getFragmentManager().beginTransaction().replace(R.id.objective_fragment_holder, new FormFragment()).commit();
         }
         return super.onOptionsItemSelected(item);
     }
